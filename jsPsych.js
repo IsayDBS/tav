@@ -214,6 +214,20 @@ var revision1 = {
 }
 */
 
+const subject_id = jsPsych.randomization.randomID(10);
+const filename = `${subject_id}.csv`;
+
+
+const save_data = {
+  type: jsPsychPipe,
+  action: "save",
+  experiment_id: "BFvtxhqPm4b4",
+  filename: filename,
+  data_string: ()=>jsPsych.data.get().csv()
+};
+
+timeline.push(save_data);
+
 /*
 * Final de nuestro programa, corre lo que hay en timeline
 */
